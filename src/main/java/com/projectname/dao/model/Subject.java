@@ -1,6 +1,6 @@
 package com.projectname.dao.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,12 +12,12 @@ import javax.persistence.Table;
 public class Subject {
 	@Id
 	private int id;
-	@Column
+	@Column(name = "name")
 	private String name;
-	@Column
+	@Column(name = "description")
 	private String description;
-	@Column
-	private Date creationDate;
+	@Column(name = "creation_date")
+	private LocalDateTime creationDate;
 	
 	public int getId() {
 		return id;
@@ -39,10 +39,10 @@ public class Subject {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(LocalDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
 }

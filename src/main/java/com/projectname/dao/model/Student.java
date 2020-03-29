@@ -1,6 +1,6 @@
 package com.projectname.dao.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -14,12 +14,15 @@ public class Student {
 
 	@Id
 	private int id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "last_name")
 	private String lastName;
+	@Column(name = "dni")
 	private int dni;
-	@Column(name = "dateOfBirth")
-	private Date dateOfBirth;
-	@Column(name = "creation_date", columnDefinition = "TIMESTAMP")
+	@Column(name = "date_of_birth")
+	private LocalDate dateOfBirth;
+	@Column(name = "creation_date")
 	private LocalDateTime creationDate;
 
 	public LocalDateTime getCreationDate() {
@@ -62,11 +65,11 @@ public class Student {
 		this.dni = dni;
 	}
 
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
