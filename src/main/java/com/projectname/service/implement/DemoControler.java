@@ -20,6 +20,7 @@ import com.projectname.dao.model.*;
 
 @RestController
 public class DemoControler {
+
 	@Autowired(required = true)
 	private StudentRepository studentRepository;
 
@@ -41,13 +42,13 @@ public class DemoControler {
 		Student findStudent = new Student();
 
 		findStudent = studentRepository.findById(student_id);
-		
+
 		student.setId(student_id);
 		student.setCreationDate(findStudent.getCreationDate());
 
 		return studentRepository.save(student);
 	}
-	
+
 	@DeleteMapping("/students/{student_id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void deleteStudent(@PathVariable Integer student_id) {
